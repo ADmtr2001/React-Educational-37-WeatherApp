@@ -17,6 +17,7 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
+  background: #8eb54b;
   border: 2px solid black;
   width: 100%;
   height: 600px;

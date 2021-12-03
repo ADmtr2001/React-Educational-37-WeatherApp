@@ -13,8 +13,10 @@ const Form = () => {
 export default Form;
 
 const Container = styled.div`
+  background: #a9d066;
+  border: 2px solid black;
+  border-radius: 5px;
   height: 80px;
-  background: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,13 +26,12 @@ const Container = styled.div`
 const Input = styled.input`
   width: 400px;
   height: 60%;
-  font-size: 18px;
+  font-size: 1.1rem;
   margin: 0 10px;
   padding: 10px;
   background: papayawhip;
   border: 2px solid black;
   border-radius: 5px;
-
   color: palevioletred;
 
   ::placeholder {
@@ -40,7 +41,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   height: 60%;
-  font-size: 18px;
+  font-size: 1.1rem;
   padding: 0 20px;
   margin: 0 10px;
   background: papayawhip;

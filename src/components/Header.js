@@ -8,6 +8,7 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
+  background: #8eb54b;
   min-height: 60px;
   display: flex;
   justify-content: center;
