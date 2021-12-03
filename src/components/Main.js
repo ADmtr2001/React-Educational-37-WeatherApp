@@ -23,4 +23,8 @@ const Container = styled.div`
   margin-top: 5vh;
   border-radius: 15px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
