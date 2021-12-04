@@ -3,17 +3,37 @@ import styled from "styled-components";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import ClearIcon from "@mui/icons-material/Clear";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
+import { useDispatch } from "react-redux";
+import {
+  clearListAction,
+  shuffleItemsAction,
+  sortItemsAction,
+} from "../store/actions/listActions";
 
 const Buttons = () => {
+  const dispatch = useDispatch();
+
+  const sortItems = () => {
+    dispatch(sortItemsAction());
+  };
+
+  const clearList = () => {
+    dispatch(clearListAction());
+  };
+
+  const shuffleItems = () => {
+    dispatch(shuffleItemsAction());
+  };
+
   return (
     <Container>
-      <Button>
+      <Button onClick={sortItems}>
         <SortByAlphaIcon fontSize='large' />
       </Button>
-      <Button>
+      <Button onClick={shuffleItems}>
         <ShuffleIcon fontSize='large' />
       </Button>
-      <Button>
+      <Button onClick={clearList}>
         <ClearIcon fontSize='large' />
       </Button>
     </Container>

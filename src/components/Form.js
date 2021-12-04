@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addItemAction } from "../store/actions/listActions";
 
 const Form = () => {
+  const dispatch = useDispatch();
+  const [inputText, setInputText] = useState("");
+
+  const addItem = (e) => {
+    e.preventDefault();
+    dispatch(addItemAction({ id: Date.now(), text: inputText }));
+    setInputText("");
+  };
+
   return (
     <Container>
-      <Input type='text' placeholder='Task' />
-      <Button>Go!</Button>
+      <Input
+        type='text'
+        placeholder='Task'
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+      />
+      <Button type='submit' onClick={(e) => addItem(e)}>
+        Go!
+      </Button>
     </Container>
   );
 };
 
 export default Form;
 
-const Container = styled.div`
+const Container = styled.form`
   background: #a9d066;
   border: 2px solid black;
   border-radius: 5px;

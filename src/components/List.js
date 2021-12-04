@@ -1,17 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import ListItem from "./ListItem";
 
 const List = () => {
+  const list = useSelector((state) => state.list.list);
+
   return (
     <Container>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {list.map((item) => (
+        <ListItem key={item.id} {...item} />
+      ))}
     </Container>
   );
 };
